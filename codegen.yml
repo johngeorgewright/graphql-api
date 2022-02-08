@@ -1,0 +1,12 @@
+schema: src/modules/**/*.graphql
+generates:
+  ./src/modules/:
+    preset: '@graphql-codegen/graphql-modules-preset'
+    config:
+      contextType: GraphQLModules.Context
+    presetConfig:
+      baseTypesPath: ../generated/schema-types.ts
+      filename: generated/module-types.ts
+    plugins:
+      - '@graphql-codegen/typescript'
+      - '@graphql-codegen/typescript-resolvers'

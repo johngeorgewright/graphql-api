@@ -1,0 +1,23 @@
+type Book {
+  id: ID!
+  author: Author!
+  authorId: ID!
+  title: String!
+}
+
+enum BookSortField {
+  title
+}
+
+enum BookSortDirection {
+  ASC
+  DESC
+}
+
+type Query {
+  book(id: ID!): Book
+  books(
+    sortBy: BookSortField = title
+    sortDirection: BookSortDirection = ASC
+  ): [Book!]!
+}
