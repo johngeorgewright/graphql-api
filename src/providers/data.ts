@@ -1,5 +1,5 @@
 import DataLoader from 'dataloader'
-import { InjectionToken, Provider } from 'graphql-modules'
+import { InjectionToken, Provider, Scope } from 'graphql-modules'
 import { Connection, EntityTarget, FindManyOptions } from 'typeorm'
 import { connectionInjectionToken } from './db'
 import { Scalars } from '../generated/schema-types'
@@ -16,6 +16,7 @@ export default function dataProvider<Entity extends { id: string }>(
   return {
     provide: injectionToken,
     deps: [connectionInjectionToken],
+    scope: Scope.Operation,
     useFactory(connection: Connection) {
       const dataLoader = new DataLoader<string, Entity>(async (ids) =>
         connection.manager.findByIds(Entity, ids as string[])
