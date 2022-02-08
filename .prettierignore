@@ -1,4 +1,5 @@
 dist
+generated
 *.log
 .pnp.cjs
 .yarn/*
