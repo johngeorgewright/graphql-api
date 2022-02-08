@@ -1,0 +1,66 @@
+{
+  "name": "@johngeorgewright/ts-module",
+  "version": "1.5.2",
+  "description": "Compose and react upon redux actions",
+  "private": true,
+  "main": "dist/ts-module.js",
+  "scripts": {
+    "build": "yarn clean && tsc",
+    "clean": "rimraf dist",
+    "start": "concurrently --names=build,test --prefix-colors=yellow,blue 'yarn start:build' 'yarn start:test'",
+    "start:build": "tsc --watch --preserveWatchOutput",
+    "start:test": "jest --watch",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johngeorgewright/ts-module.git"
+  },
+  "keywords": [],
+  "author": "John Wright <johngeorge.wright@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johngeorgewright/ts-module/issues"
+  },
+  "homepage": "https://github.com/johngeorgewright/ts-module#readme",
+  "devDependencies": {
+    "@commitlint/cli": "16.1.0",
+    "@commitlint/config-conventional": "16.0.0",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.2",
+    "@semantic-release/npm": "9.0.0",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "@types/jest": "27.4.0",
+    "@types/node": "16.11.22",
+    "@types/source-map-support": "0.5.4",
+    "commitizen": "4.2.4",
+    "concurrently": "7.0.0",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "lint-staged": "12.3.3",
+    "prettier": "2.5.1",
+    "rimraf": "3.0.2",
+    "semantic-release": "19.0.2",
+    "source-map-support": "0.5.21",
+    "ts-jest": "27.1.3",
+    "ts-node": "10.5.0",
+    "typescript": "4.5.5"
+  },
+  "lint-staged": {
+    "*.{md,json,js,jsx,ts,tsx,yml,yaml}": [
+      "yarn prettier --ignore-path .gitignore --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "tslib": "2.3.1"
+  },
+  "packageManager": "yarn@3.1.1"
+}
