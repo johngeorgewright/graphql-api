@@ -1,18 +1,10 @@
 import 'reflect-metadata'
 import 'graphql-import-node'
 import { ApolloServer } from 'apollo-server'
-import { connectionProvider } from './providers/db'
-import { createApplication } from 'graphql-modules'
-import authorsModule from './modules/authors'
-import booksModule from './modules/books'
+import application from './application'
 ;(async () => {
-  const application = createApplication({
-    modules: [authorsModule, booksModule],
-    providers: [await connectionProvider()],
-  })
-
   new ApolloServer({
-    schema: application.createSchemaForApollo(),
+    schema: (await application()).createSchemaForApollo(),
   })
     .listen()
     .then(({ url }) => {
