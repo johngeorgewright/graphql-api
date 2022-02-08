@@ -1,5 +1,6 @@
 db.sqlite
 dist
+generated
 *.log
 .yarn/*
 !.yarn/cache
