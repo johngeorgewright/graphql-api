@@ -1,6 +1,14 @@
 # @johngeorgewright/graphql-api
 
-This is a template repository for creating a NPM package with TypeScript.
+This is a template repository for creating a GraphQL API.
+
+## Features
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Apollo GraphQL](https://www.apollographql.com/)
+- [GraphQL Codegen](https://www.graphql-code-generator.com/)
+- [GraphQL Modules](https://www.graphql-modules.com/)
+- [TypeORM](https://typeorm.io/)
 
 ## Setting up
 
