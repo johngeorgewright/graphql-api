@@ -1,6 +1,6 @@
 {
   "name": "@johngeorgewright/graphql-api",
-  "version": "1.5.2",
+  "version": "1.0.0",
   "description": "Compose and react upon redux actions",
   "private": true,
   "main": "dist/serve.js",
