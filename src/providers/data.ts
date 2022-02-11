@@ -1,11 +1,6 @@
 import DataLoader from 'dataloader'
 import { InjectionToken, Provider, Scope } from 'graphql-modules'
-import {
-  Connection,
-  EntitySchema,
-  EntityTarget,
-  FindManyOptions,
-} from 'typeorm'
+import { Connection, EntityTarget, FindManyOptions } from 'typeorm'
 import { DB_CONNECTION } from './db'
 import { Scalars } from '../generated/schema-types'
 
