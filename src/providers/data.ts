@@ -51,9 +51,7 @@ export default function dataProvider<Entity extends { id: string }>(
 function getEntityName(Entity: EntityTarget<any>): string {
   return typeof Entity === 'string'
     ? Entity
-    : typeof Entity === 'function'
-    ? Entity.name
-    : Entity instanceof EntitySchema
+    : 'options' in Entity
     ? Entity.options.name
     : Entity.name
 }
