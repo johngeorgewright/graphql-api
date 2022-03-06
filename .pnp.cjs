@@ -67,7 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-support", "npm:0.5.21"],\
             ["sqlite3", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:5.0.2"],\
             ["ts-jest", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:27.1.3"],\
-            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.6.0"],\
+            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.7.0"],\
             ["ts-node-dev", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:1.1.8"],\
             ["tslib", "npm:2.3.1"],\
             ["typeorm", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:0.2.45"],\
@@ -3400,7 +3400,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-support", "npm:0.5.21"],\
             ["sqlite3", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:5.0.2"],\
             ["ts-jest", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:27.1.3"],\
-            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.6.0"],\
+            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.7.0"],\
             ["ts-node-dev", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:1.1.8"],\
             ["tslib", "npm:2.3.1"],\
             ["typeorm", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:0.2.45"],\
@@ -15404,10 +15404,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:10.6.0", {\
-          "packageLocation": "./.yarn/cache/ts-node-npm-10.6.0-612b9f0b29-bc7589d8c3.zip/node_modules/ts-node/",\
+        ["npm:10.7.0", {\
+          "packageLocation": "./.yarn/cache/ts-node-npm-10.7.0-ef39b1d45e-2a379e43f7.zip/node_modules/ts-node/",\
           "packageDependencies": [\
-            ["ts-node", "npm:10.6.0"]\
+            ["ts-node", "npm:10.7.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -15456,10 +15456,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.6.0", {\
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-8c00037394/0/cache/ts-node-npm-10.6.0-612b9f0b29-bc7589d8c3.zip/node_modules/ts-node/",\
+        ["virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.7.0", {\
+          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-6cf553d96d/0/cache/ts-node-npm-10.7.0-ef39b1d45e-2a379e43f7.zip/node_modules/ts-node/",\
           "packageDependencies": [\
-            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.6.0"],\
+            ["ts-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.7.0"],\
             ["@cspotcode/source-map-support", "npm:0.7.0"],\
             ["@swc/core", null],\
             ["@swc/wasm", null],\
