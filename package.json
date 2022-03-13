@@ -1,7 +1,7 @@
 {
   "name": "@johngeorgewright/graphql-api",
   "version": "1.0.0",
-  "description": "Compose and react upon redux actions",
+  "description": "GraphQL API",
   "private": true,
   "main": "dist/entry.js",
   "scripts": {
