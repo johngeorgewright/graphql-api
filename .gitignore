@@ -1,7 +1,8 @@
-db.sqlite
 dist
+.env
 generated
 *.log
+*.sqlite
 .yarn/*
 !.yarn/cache
 !.yarn/patches

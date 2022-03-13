@@ -3,6 +3,8 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 export class CreateBooksAndAuthorsTables1643789918381
   implements MigrationInterface
 {
+  name = 'CreateBooksAndAuthorsTables1643789918381'
+
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({

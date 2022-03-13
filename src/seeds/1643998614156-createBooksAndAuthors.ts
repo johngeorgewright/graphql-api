@@ -2,8 +2,8 @@ import { MigrationInterface, QueryRunner } from 'typeorm'
 import { Author } from '../entities/Author'
 import { Book } from '../entities/Book'
 
-export class createBooksAndAuthors1643998614156 implements MigrationInterface {
-  name = 'createBooksAndAuthors1643998614156'
+export class CreateBooksAndAuthors1643998614156 implements MigrationInterface {
+  name = 'CreateBooksAndAuthors1643998614156'
 
   public async up({ connection }: QueryRunner) {
     const kate = new Author()
@@ -22,14 +22,25 @@ export class createBooksAndAuthors1643998614156 implements MigrationInterface {
     cityOfGlass.title = 'City of Glass'
     cityOfGlass.author = paul
 
-    await connection.manager.insert(Author, kate)
-    await connection.manager.insert(Author, paul)
-    await connection.manager.insert(Book, theAwakening)
-    await connection.manager.insert(Book, cityOfGlass)
+    await connection.manager.insert(Author, [kate, paul])
+    await connection.manager.insert(Book, [theAwakening, cityOfGlass])
   }
 
   public async down({ connection }: QueryRunner) {
-    await connection.manager.delete(Book, {})
-    await connection.manager.delete(Author, {})
+    const kate = connection.manager.findOne(Author, {
+      where: { email: 'kate@chopin.com' },
+    })
+    const paul = connection.manager.findOne(Author, {
+      where: { email: 'paul@auster.com' },
+    })
+    const theAwakening = await connection.manager.findOne(Book, {
+      where: { title: 'The Awakening', author: kate },
+    })
+    const cityOfGlass = await connection.manager.findOne(Book, {
+      where: { title: 'City of Glass', author: paul },
+    })
+
+    await connection.manager.delete(Book, [theAwakening, cityOfGlass])
+    await connection.manager.delete(Author, [kate, paul])
   }
 }

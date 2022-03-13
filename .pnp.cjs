@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@graphql-codegen/graphql-modules-preset", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.3.3"],
             ["@graphql-codegen/typescript", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.4.3"],
             ["@graphql-codegen/typescript-resolvers", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.5.0"],
+            ["@jest/types", "npm:27.5.1"],
             ["@semantic-release/commit-analyzer", "virtual:8e700fd456d50f6da37430593bc9d2afe809721c9f048ed4b4c5f47fb84331a2a853c382bf79882f82361ba0770e782b4e1fbd195a65bff8ad3dbec6b0ec0e22#npm:9.0.2"],
             ["@semantic-release/git", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.0.1"],
             ["@semantic-release/github", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:8.0.2"],
@@ -55,6 +56,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["concurrently", "npm:7.0.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["dataloader", "npm:2.0.0"],
+            ["dotenv-extended", "npm:2.9.0"],
             ["express", "npm:4.17.2"],
             ["graphql", "npm:16.3.0"],
             ["graphql-import-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:0.0.4"],
@@ -3373,6 +3375,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@graphql-codegen/graphql-modules-preset", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.3.3"],
             ["@graphql-codegen/typescript", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.4.3"],
             ["@graphql-codegen/typescript-resolvers", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:2.5.0"],
+            ["@jest/types", "npm:27.5.1"],
             ["@semantic-release/commit-analyzer", "virtual:8e700fd456d50f6da37430593bc9d2afe809721c9f048ed4b4c5f47fb84331a2a853c382bf79882f82361ba0770e782b4e1fbd195a65bff8ad3dbec6b0ec0e22#npm:9.0.2"],
             ["@semantic-release/git", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:10.0.1"],
             ["@semantic-release/github", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:8.0.2"],
@@ -3387,6 +3390,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["concurrently", "npm:7.0.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["dataloader", "npm:2.0.0"],
+            ["dotenv-extended", "npm:2.9.0"],
             ["express", "npm:4.17.2"],
             ["graphql", "npm:16.3.0"],
             ["graphql-import-node", "virtual:c8e1c952d5339fb4f2b2dfb6c3ecbca4fc94673ad21e7812b2fd9576617bb73adf6c6846ed64479ea399c0bfa534d08106f61d715ba43925ba8b51021b73cc8a#npm:0.0.4"],
@@ -5464,6 +5468,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["auto-parse", [
+        ["npm:1.8.0", {
+          "packageLocation": "./.yarn/cache/auto-parse-npm-1.8.0-2f5646274c-05c6562edd.zip/node_modules/auto-parse/",
+          "packageDependencies": [
+            ["auto-parse", "npm:1.8.0"],
+            ["typpy", "npm:2.3.11"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["aws-sign2", [
         ["npm:0.7.0", {
           "packageLocation": "./.yarn/cache/aws-sign2-npm-0.7.0-656c6cb84d-b148b0bb07.zip/node_modules/aws-sign2/",
@@ -7506,6 +7520,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["dotenv-extended", [
+        ["npm:2.9.0", {
+          "packageLocation": "./.yarn/cache/dotenv-extended-npm-2.9.0-028fa65fe4-e7daf245c8.zip/node_modules/dotenv-extended/",
+          "packageDependencies": [
+            ["dotenv-extended", "npm:2.9.0"],
+            ["auto-parse", "npm:1.8.0"],
+            ["camelcase", "npm:5.3.1"],
+            ["cross-spawn", "npm:7.0.3"],
+            ["dotenv", "npm:8.6.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["dset", [
         ["npm:3.1.1", {
           "packageLocation": "./.yarn/cache/dset-npm-3.1.1-6da1692d89-db9aeb64c2.zip/node_modules/dset/",
@@ -8340,6 +8367,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/function-bind-npm-1.1.1-b56b322ae9-b32fbaebb3.zip/node_modules/function-bind/",
           "packageDependencies": [
             ["function-bind", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["function.name", [
+        ["npm:1.0.13", {
+          "packageLocation": "./.yarn/cache/function.name-npm-1.0.13-b7b2d26f1f-376bd4247c.zip/node_modules/function.name/",
+          "packageDependencies": [
+            ["function.name", "npm:1.0.13"],
+            ["noop6", "npm:1.0.9"]
           ],
           "linkType": "HARD",
         }]
@@ -12180,6 +12217,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["noop6", [
+        ["npm:1.0.9", {
+          "packageLocation": "./.yarn/cache/noop6-npm-1.0.9-2182ae9bbe-cc46d03eb2.zip/node_modules/noop6/",
+          "packageDependencies": [
+            ["noop6", "npm:1.0.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["nopt", [
         ["npm:3.0.6", {
           "packageLocation": "./.yarn/cache/nopt-npm-3.0.6-370ee63cf6-7f8579029a.zip/node_modules/nopt/",
@@ -15694,6 +15740,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-3020d8933d-c05c318d79.zip/node_modules/typescript/",
           "packageDependencies": [
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["typpy", [
+        ["npm:2.3.11", {
+          "packageLocation": "./.yarn/cache/typpy-npm-2.3.11-edfa7c352a-9bbef6a83a.zip/node_modules/typpy/",
+          "packageDependencies": [
+            ["typpy", "npm:2.3.11"],
+            ["function.name", "npm:1.0.13"]
           ],
           "linkType": "HARD",
         }]
