@@ -14,7 +14,7 @@
     "orm": "node --require ts-node/register node_modules/.bin/typeorm",
     "seed": "npm run env --path=.env.seed yarn orm migration:run",
     "unseed": "npm run env --path=.env.seed yarn orm migration:revert",
-    "start": "concurrently --names gql,server --prefix-colors bgBlue.bold,bgMagenta.bold 'npm run start:gql' 'npm run start:server'",
+    "start": "concurrently --names gql,server --prefix-colors bgBlue.bold,bgMagenta.bold npm:start:*",
     "start:gql": "graphql-codegen --watch",
     "start:server": "npm run env ts-node-dev ./src/entry.ts",
     "test": "npm run env --path=.env.test jest --passWithNoTests",
