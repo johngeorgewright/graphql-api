@@ -19,15 +19,15 @@ jobs:
           node-version-file: .nvmrc
 
       - name: Setup
-        run: yarn --immutable
+        run: npm ci
 
       - name: Test
-        run: yarn test
+        run: npm test
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Release
-        run: yarn semantic-release
+        run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
