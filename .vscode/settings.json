@@ -1,4 +1,4 @@
 {
-  "jest.jestCommandLine": "yarn test",
+  "jest.jestCommandLine": "npm run env -- --path=.env.test npx jest",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
