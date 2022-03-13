@@ -6,7 +6,7 @@
   "main": "dist/entry.js",
   "scripts": {
     "build": "npm run clean && npm run gql && tsc",
-    "clean": "rimraf *(src/**/generated|dist) || true",
+    "clean": "rimraf '*(src/**/generated|dist)' || true",
     "env": "dotenv-extended --errorOnMissing=true --includeProcessEnv=true",
     "gql": "graphql-codegen",
     "migrate:up": "npm run env yarn orm migration:run",
