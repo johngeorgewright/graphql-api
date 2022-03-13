@@ -5,20 +5,19 @@
   "private": true,
   "main": "dist/entry.js",
   "scripts": {
-    "build": "yarn clean && yarn gql && tsc",
+    "build": "npm run clean && npm run gql && tsc",
     "clean": "rimraf *(src/**/generated|dist) || true",
-    "env": "yarn dotenv-extended --errorOnMissing=true --includeProcessEnv=true",
+    "env": "dotenv-extended --errorOnMissing=true --includeProcessEnv=true",
     "gql": "graphql-codegen",
-    "migrate:up": "yarn env yarn orm migration:run",
-    "migrate:down": "yarn env yarn orm migration:revert",
-    "orm": "node --require ts-node/register $(yarn bin typeorm)",
-    "seed": "yarn env --path=.env.seed yarn orm migration:run",
-    "unseed": "yarn env --path=.env.seed yarn orm migration:revert",
-    "start": "concurrently --names gql,server --prefix-colors bgBlue.bold,bgMagenta.bold 'yarn start:gql' 'yarn start:server'",
-    "start:db": "docker run --detach --name graphql-api-mariadb --env-file .env.defaults mariadb:latest",
+    "migrate:up": "npm run env yarn orm migration:run",
+    "migrate:down": "npm run env yarn orm migration:revert",
+    "orm": "node --require ts-node/register node_modules/.bin/typeorm",
+    "seed": "npm run env --path=.env.seed yarn orm migration:run",
+    "unseed": "npm run env --path=.env.seed yarn orm migration:revert",
+    "start": "concurrently --names gql,server --prefix-colors bgBlue.bold,bgMagenta.bold 'npm run start:gql' 'npm run start:server'",
     "start:gql": "graphql-codegen --watch",
-    "start:server": "yarn env ts-node-dev ./src/entry.ts",
-    "test": "yarn env --path=.env.test jest --passWithNoTests",
+    "start:server": "npm run env ts-node-dev ./src/entry.ts",
+    "test": "npm run env --path=.env.test jest --passWithNoTests",
     "prepare": "husky install"
   },
   "repository": {
@@ -66,7 +65,7 @@
   },
   "lint-staged": {
     "*.{md,json,js,jsx,ts,tsx,yml,yaml}": [
-      "yarn prettier --ignore-path .gitignore --write"
+      "npx prettier --ignore-path .gitignore --write"
     ]
   },
   "config": {
@@ -79,13 +78,12 @@
     "dataloader": "2.0.0",
     "dotenv-extended": "2.9.0",
     "express": "4.17.3",
-    "graphql": "16.3.0",
+    "graphql": "^15.8.0",
     "graphql-import-node": "0.0.4",
     "graphql-modules": "2.0.0",
     "reflect-metadata": "0.1.13",
     "sqlite3": "5.0.2",
     "tslib": "2.3.1",
     "typeorm": "0.2.45"
-  },
-  "packageManager": "yarn@3.2.0"
+  }
 }
