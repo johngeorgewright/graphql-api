@@ -1,7 +1,9 @@
-db.sqlite
 dist
+.env
 generated
 *.log
+node_modules
+*.sqlite
 .yarn/*
 !.yarn/cache
 !.yarn/patches

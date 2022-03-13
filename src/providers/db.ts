@@ -3,7 +3,9 @@ import { Connection, createConnection, getConnection } from 'typeorm'
 
 export const DB_CONNECTION = new InjectionToken<Connection>('db-connection')
 
-export async function connectionProvider(): Promise<Provider<Connection>> {
+export async function connectionProvider(
+  _name: string
+): Promise<Provider<Connection>> {
   await createConnection()
   return {
     global: true,

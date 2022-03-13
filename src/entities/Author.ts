@@ -6,12 +6,12 @@ export class Author {
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
+  @OneToMany(() => Book, (book) => book.author)
+  books!: Book[]
+
   @Column('varchar')
   name!: string
 
   @Column('varchar')
   email!: string
-
-  @OneToMany(() => Book, (book) => book.author)
-  books!: Book[]
 }

@@ -1,10 +1,18 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+import { Config } from '@jest/types'
+
+const config: Config.InitialOptions = {
   globals: {
     'ts-jest': {
       tsconfig: 'tsconfig.test.json',
     },
   },
-  setupFiles: ['reflect-metadata'],
+  preset: 'ts-jest',
+  rootDir: 'test',
+  setupFilesAfterEnv: ['reflect-metadata'],
+  testEnvironment: 'node',
+  transform: {
+    '^.+\\.graphql$': 'graphql-import-node/jest',
+  },
 }
+
+export default config
