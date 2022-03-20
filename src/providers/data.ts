@@ -17,6 +17,7 @@ export default function dataProvider<Entity extends { id: string }>(
   return [
     injectionToken,
     {
+      global: true,
       provide: injectionToken,
       deps: [DB_CONNECTION],
       scope: Scope.Operation,
