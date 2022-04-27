@@ -83,7 +83,7 @@
     "graphql-import-node": "0.0.4",
     "graphql-modules": "2.0.0",
     "reflect-metadata": "0.1.13",
-    "sqlite3": "5.0.5",
+    "sqlite3": "5.0.6",
     "tslib": "2.4.0",
     "typeorm": "0.2.45"
   }
