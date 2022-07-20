@@ -35,7 +35,7 @@
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@commitlint/types": "17.0.0",
-    "@graphql-codegen/cli": "2.9.0",
+    "@graphql-codegen/cli": "2.9.1",
     "@graphql-codegen/graphql-modules-preset": "2.4.2",
     "@graphql-codegen/typescript": "2.7.2",
     "@graphql-codegen/typescript-resolvers": "2.7.2",
