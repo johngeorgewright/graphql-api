@@ -37,7 +37,7 @@
     "@commitlint/types": "17.0.0",
     "@graphql-codegen/cli": "2.13.7",
     "@graphql-codegen/graphql-modules-preset": "2.5.4",
-    "@graphql-codegen/typescript": "2.7.5",
+    "@graphql-codegen/typescript": "2.8.0",
     "@graphql-codegen/typescript-resolvers": "2.7.5",
     "@jest/types": "29.2.1",
     "@semantic-release/commit-analyzer": "9.0.2",
