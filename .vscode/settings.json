@@ -1,4 +1,4 @@
 {
-  "jest.jestCommandLine": "npm run env -- --path=.env.test npx jest",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

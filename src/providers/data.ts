@@ -1,12 +1,12 @@
 import DataLoader from 'dataloader'
 import { InjectionToken, Provider, Scope } from 'graphql-modules'
-import { Connection, EntityTarget, FindManyOptions } from 'typeorm'
-import { DB_CONNECTION } from './db'
+import { DataSource, EntityTarget, FindManyOptions } from 'typeorm'
+import { DATA_SOURCE } from './db'
 import { Scalars } from '../generated/schema-types'
 
 export interface Data<Entity extends { id: string }> {
   getAll(options?: FindManyOptions<Entity>): Promise<Entity[]>
-  getById(id: Scalars['ID']): Promise<Entity>
+  getById(id: Scalars['ID']['input']): Promise<Entity>
 }
 
 export default function dataProvider<Entity extends { id: string }>(
@@ -19,24 +19,28 @@ export default function dataProvider<Entity extends { id: string }>(
     {
       global: true,
       provide: injectionToken,
-      deps: [DB_CONNECTION],
+      deps: [DATA_SOURCE],
       scope: Scope.Operation,
-      useFactory(connection: Connection) {
+      useFactory({ manager }: DataSource) {
         const dataLoader = new DataLoader<string, Entity>(async (ids) =>
-          connection.manager.findByIds(Entity, ids as string[])
+          manager.findByIds(Entity, ids as string[])
         )
 
         return {
           async getAll(options: FindManyOptions<Entity> = {}) {
-            const books = await connection.manager.find(Entity, options)
-            for (const book of books) dataLoader.prime(book.id, book)
-            return books
+            const entities = await manager.find(Entity, options)
+            for (const entity of entities) dataLoader.prime(entity.id, entity)
+            return entities
           },
 
-          async getById(id: Scalars['ID']) {
+          async getById(id: Scalars['ID']['input']) {
             const result = await dataLoader.load(id)
             if (!result) throw new Error(`No result with id ${id}`)
             return result
+          },
+
+          async getByIds(ids: Scalars['ID']['input'][]) {
+            return dataLoader.loadMany(ids)
           },
         }
       },

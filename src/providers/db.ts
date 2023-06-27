@@ -1,14 +1,15 @@
 import { InjectionToken, Provider, Scope } from 'graphql-modules'
-import { Connection, createConnection, getConnection } from 'typeorm'
+import { DataSource } from 'typeorm'
+import { dataSource } from '../dataSources/default'
 
-export const DB_CONNECTION = new InjectionToken<Connection>('db-connection')
+export const DATA_SOURCE = new InjectionToken<DataSource>('data-source')
 
-export async function connectionProvider(): Promise<Provider<Connection>> {
-  await createConnection()
+export async function dataSourceProvider(): Promise<Provider<DataSource>> {
+  await dataSource.initialize()
   return {
     global: true,
     scope: Scope.Singleton,
-    provide: DB_CONNECTION,
-    useFactory: getConnection,
+    provide: DATA_SOURCE,
+    useFactory: () => dataSource,
   }
 }

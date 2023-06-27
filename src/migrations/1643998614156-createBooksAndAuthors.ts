@@ -27,17 +27,21 @@ export class CreateBooksAndAuthors1643998614156 implements MigrationInterface {
   }
 
   public async down({ connection }: QueryRunner) {
-    const kate = connection.manager.findOne(Author, {
+    const kate = await connection.manager.findOne(Author, {
       where: { email: 'kate@chopin.com' },
     })
-    const paul = connection.manager.findOne(Author, {
+    const paul = await connection.manager.findOne(Author, {
       where: { email: 'paul@auster.com' },
     })
     const theAwakening = await connection.manager.findOne(Book, {
-      where: { title: 'The Awakening', author: kate },
+      where: kate
+        ? { title: 'The Awakening', author: kate }
+        : { title: 'The Awakening' },
     })
     const cityOfGlass = await connection.manager.findOne(Book, {
-      where: { title: 'City of Glass', author: paul },
+      where: paul
+        ? { title: 'City of Glass', author: paul }
+        : { title: 'City of Glass' },
     })
 
     await connection.manager.delete(Book, [theAwakening, cityOfGlass])
