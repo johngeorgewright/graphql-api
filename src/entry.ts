@@ -3,8 +3,10 @@ import 'graphql-import-node'
 import { ApolloServer } from 'apollo-server'
 import application from './application'
 ;(async () => {
+  const app = await application()
   new ApolloServer({
-    schema: (await application()).createSchemaForApollo(),
+    executor: app.createApolloExecutor(),
+    schema: app.schema,
   })
     .listen()
     .then(({ url }) => {
