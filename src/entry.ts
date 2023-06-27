@@ -1,15 +1,17 @@
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
 import 'reflect-metadata'
 import 'graphql-import-node'
-import { ApolloServer } from 'apollo-server'
 import application from './application'
 ;(async () => {
   const app = await application()
-  new ApolloServer({
-    executor: app.createApolloExecutor(),
-    schema: app.schema,
-  })
-    .listen()
-    .then(({ url }) => {
-      console.log(`🚀 Server ready at ${url}`)
-    }, console.error)
+  const { url } = await startStandaloneServer(
+    new ApolloServer({
+      schema: app.schema,
+    }),
+    {
+      listen: { port: 4_000 },
+    }
+  )
+  console.log(`🚀 Server ready at ${url}`)
 })()
