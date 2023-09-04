@@ -1,17 +1,13 @@
-import { ApolloServer } from '@apollo/server'
-import { startStandaloneServer } from '@apollo/server/standalone'
-import 'reflect-metadata'
-import 'graphql-import-node'
+import { useGraphQLModules } from '@envelop/graphql-modules'
+import { createYoga } from 'graphql-yoga'
+import { createServer } from 'node:http'
 import application from './application'
 ;(async () => {
-  const app = await application()
-  const { url } = await startStandaloneServer(
-    new ApolloServer({
-      schema: app.schema,
-    }),
-    {
-      listen: { port: 4_000 },
-    }
-  )
-  console.log(`🚀 Server ready at ${url}`)
+  const yoga = createYoga({
+    plugins: [useGraphQLModules(await application())],
+  })
+
+  const server = createServer(yoga).listen(4_000, () => {
+    console.info('Server listening on', server.address())
+  })
 })()

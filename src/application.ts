@@ -1,3 +1,4 @@
+import 'graphql-import-node'
 import { createApplication } from 'graphql-modules'
 import authorsModule from './modules/authors'
 import { authorsProvider } from './modules/authors/data'

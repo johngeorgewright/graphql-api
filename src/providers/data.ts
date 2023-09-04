@@ -10,7 +10,7 @@ export interface Data<Entity extends { id: string }> {
 }
 
 export default function dataProvider<Entity extends { id: string }>(
-  Entity: EntityTarget<Entity>
+  Entity: EntityTarget<Entity>,
 ): [InjectionToken<Data<Entity>>, Provider<Data<Entity>>] {
   const injectionToken = new InjectionToken<Data<Entity>>(getEntityName(Entity))
 
@@ -22,9 +22,20 @@ export default function dataProvider<Entity extends { id: string }>(
       deps: [DATA_SOURCE],
       scope: Scope.Operation,
       useFactory({ manager }: DataSource) {
-        const dataLoader = new DataLoader<string, Entity>(async (ids) =>
-          manager.findByIds(Entity, ids as string[])
-        )
+        const dataLoader = new DataLoader<string, Entity>(async (ids) => {
+          const results = await manager.findByIds(Entity, ids as string[])
+
+          if (results.length !== ids.length)
+            throw new Error(
+              `Cannot find ${getEntityName(
+                Entity,
+              )} entities with ids (${ids.filter(
+                (id) => !results.find((result) => result.id === id),
+              )}).`,
+            )
+
+          return results
+        })
 
         return {
           async getAll(options: FindManyOptions<Entity> = {}) {
