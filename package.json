@@ -38,6 +38,7 @@
     "@graphql-codegen/typescript": "4.0.1",
     "@graphql-codegen/typescript-resolvers": "4.0.1",
     "@jest/types": "29.6.1",
+    "@parcel/watcher": "^2.3.0",
     "@semantic-release/commit-analyzer": "10.0.1",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "9.0.4",
