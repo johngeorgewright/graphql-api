@@ -75,7 +75,7 @@
     "@envelop/graphql-modules": "^5.0.1",
     "dataloader": "2.2.2",
     "dotenv-extended": "2.9.0",
-    "graphql": "16.8.0",
+    "graphql": "16.9.0",
     "graphql-import-node": "0.0.5",
     "graphql-modules": "2.2.0",
     "graphql-yoga": "^4.0.4",
