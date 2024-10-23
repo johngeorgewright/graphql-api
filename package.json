@@ -44,7 +44,7 @@
     "@semantic-release/npm": "10.0.5",
     "@semantic-release/release-notes-generator": "11.0.7",
     "@types/jest": "29.5.4",
-    "@types/node": "20.5.9",
+    "@types/node": "20.17.0",
     "@types/source-map-support": "0.5.7",
     "commitizen": "4.3.0",
     "concurrently": "8.2.1",
